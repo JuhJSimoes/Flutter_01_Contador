@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+
 class HomePage extends StatelessWidget{
 
-  final estiloTexto = new TextStyle(fontSize: 30)
+  final estiloTexto = new TextStyle(fontSize: 30);
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,16 @@ class HomePage extends StatelessWidget{
           ],
         )
       ),
+      
+       //floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: (){
+
+          print('Olá Brazel!');
+        }, 
+        ),
     );
   }
 }
