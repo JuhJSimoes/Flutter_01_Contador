@@ -43,10 +43,33 @@ class _ContadorPageState extends State<ContadorPage>{
 
   Widget _criarBotoes(){
     
-    return FloatingActionButton(
-        child: Icon(Icons.add_alarm),
-        onPressed: null 
-    );
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: <Widget>[
+        SizedBox(width: 30.0),
+        FloatingActionButton(child: Icon(Icons.exposure_zero), onPressed: _reset),
+        Expanded(child: SizedBox()),
+        FloatingActionButton(child: Icon(Icons.remove), onPressed: _subtrair),
+        SizedBox(width: 5.0,),
+        FloatingActionButton(child: Icon(Icons.add), onPressed: _agregar),
+      ]
+    );  
+    
+  }
+
+
+  void _agregar(){
+    setState(() => _contador++);
+  }
+
+  void _subtrair(){
+    setState(() => _contador--);
+
+  }
+
+  void _reset(){
+
+    setState(() => _contador=0);
   }
 
 }
